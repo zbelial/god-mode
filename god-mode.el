@@ -327,7 +327,9 @@ Appends to key sequence KEY-STRING-SO-FAR."
             ((keymapp binding)
              (god-mode-lookup-key-sequence nil key-string))
             (:else
-             (error "God: Unknown key binding for `%s`" key-string))))))
+             (message "God: Unknown key binding for `%s`" key-string)
+             nil
+             )))))
 
 ;;;###autoload
 (defun god-mode-maybe-activate (&optional status)
